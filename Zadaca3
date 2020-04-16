@@ -1,0 +1,59 @@
+lasa  MultiSkup ( objekt ):
+    def  _init_ ( samo , rjecnik = Nema ):
+        sebe . __rjecnik = {}
+        sebe . __elements = []
+
+        ako  Rječnik  je  ne  Nijedna :
+            sebe . __rjecnik = rjecnik
+            za  ja  u  sebi . __rjecnik :
+                ako  ja  ne  u  sebi . __elementi :
+                    sebe . __elementi . dodati ( i )
+
+    def  _str_ ( samo ):
+        str_arr = []
+        za  ja  u  sebi . __elementi :
+            str_arr . dodaj ( "% r *% r"  % ( i , samo . __rjecnik . broj ( i )))
+        povratak  "{{" + "," . pridruži se ( str_arr ) + "}}"
+
+
+    def  _iter_ ( samo ):
+        vratiti  iter ( samo . __rjecnik )
+
+
+    def  _repr_ ( samo ):
+        vrati  "MultiSkup (" + repr ( samo . __rjecnik ) + ")"
+
+    def  add ( samo , broj , puta = 1 ):
+        za  ja  u  rasponu ( puta ):
+            sebe . __rjecnik . dodati ( broj )
+
+    def  ukloni ( self , num , times = 1 ):
+        za  ja  u  rasponu ( puta ):
+            sebe . __rjecnik . ukloni ( num )
+    
+
+
+
+ispis ( '* test 1 *' )
+a  =  MultiSkup ([ 1 , 1 , 2 , 2 , 2 , 3 , 3 , 4 ])
+print ( a )
+
+
+ispis ( '* test 2 *' )
+a  =  MultiSkup ([ 1 , 1 , 2 , 2 , 2 , 3 , 3 , 4 ])
+za  el  u  :
+    ispis ( el )
+ispis ( repr ( a ))
+
+
+ispis ( '* test 3 *' )
+a  =  MultiSkup ([ 1 , 1 , 2 , 2 , 2 , 3 , 3 , 4 ])
+a . dodaj ( 4 )
+print ( a )
+a . dodaj ( 2 , 3 )
+print ( a )
+a . ukloni ( 4 , 2 )
+print ( a )
+a . ukloni ( 2 )
+print ( a )
+ispis ( repr ( a ))
